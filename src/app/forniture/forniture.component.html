@@ -1,0 +1,14 @@
+<div class="container bootstrap snipets">
+   <h1 class="text-center text-muted">Product catalog</h1>
+   <div class="row flow-offset-1">
+     <div class="col-xs-6 col-md-4" *ngFor="let f of ListFornitures">
+       <div class="product tumbnail thumbnail-3"><a href="#"><img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt=""></a>
+         <div class="caption">
+           <h6><a href="#">{{f.titre}}</a></h6><span class="price">
+             <del>{{f.price}}</del></span><span class="price sale">$12.49</span>
+         </div>
+       </div>
+     </div>
+  
+   </div>
+ </div>

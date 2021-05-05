@@ -1,0 +1,101 @@
+<p>update</p>
+<div class="col-md-8 offset-md-3">
+    <h2>UPDATE</h2>
+    <form (ngSubmit)="onsubmit()">
+        
+        <div class="form-group col-md-3 col-sm-4">
+          <label>title</label>
+          <input type="text" class="form-control " id="title" [(ngModel)]="ad.title" name="title">
+        </div>
+        <div class="form-group col-md-3 col-sm-4">
+            <label>description</label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="ad.description" name="description">
+          </div>
+          <div class="form-group col-md-3 col-sm-4 ">
+            <label>Price</label>
+            <input type="number" class="form-control" id="price" [(ngModel)]="ad.price" name="price">
+          </div>
+          <div class="form-group col-md-3 col-sm-4 ">
+            <label>adress</label>
+            <input type="text" class="form-control" id="adress" [(ngModel)]="ad.adress" name="adress">
+          </div>
+          <div class="form-group col-md-3 col-sm-4">
+            <label>area</label>
+            <input type="number" class="form-control" id="area" [(ngModel)]="ad.area" name="area" >
+          </div>
+          <div class="form-group col-md-3 col-sm-4 ">
+            <label>room</label>
+            <input type="number" class="form-control" id="room" [(ngModel)]="ad.room" name="room">
+          </div>
+          <div class="form-group col-md-3 col-sm-4 ">
+            <label>creation date</label>
+            <input type="datetime" class="form-control" id="creationdate" [(ngModel)]="ad.creationdate" name="creationdate" placeholder="yyyy-mm-dd">
+          </div>
+         
+          <div class="form-group col-md-3 col-sm-4">
+            <label >Type of Ad</label>
+            <select id="type_ads" class="form-control" [(ngModel)]="ad.type_ads" name="type_ads" >
+              <option selected>buy</option>
+              <option >rent</option>
+            </select>
+        </div>
+    <div class="form-group col-md-3 col-sm-4">
+        <label >Category</label>
+        <select id="category" class="form-control" [(ngModel)]="ad.category" name="category">
+          <option selected >house</option>
+          <option >commerciel_permises</option>
+          <option >field</option>
+          <option >apartement</option>
+          <option >office</option>
+          <option >parking_space</option>
+          <option >others</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3 col-sm-4 ">
+        <label>City</label>
+        <select id="city" class="form-control" [(ngModel)]="ad.city" name="city" >
+          <option selected>Bizerte</option>
+          <option >Beja</option>
+          <option >Jendouba</option>
+          <option >Kef</option>
+          <option >Zaghouan</option>
+          <option >Ariana</option>
+          <option >Ben_arous</option>
+          <option >Tunis</option>
+          <option >Mannouba</option>
+          <option >Nabeul</option>
+          <option >Sousse</option>
+          <option >Mounastir</option>
+          <option >Mahdia</option>
+          <option >Kasserine</option>
+          <option >Gafsa</option>
+          <option >Sfax</option>
+          <option >Gabes</option>
+          <option >Tataouin</option>
+          <option >Medennine</option>
+          <option >Touzuer</option>
+          <option >Kebeli</option>
+          <option >Sidi_bouzid</option>
+        </select>
+      </div>
+      
+       <!-- <div class="form-group col-md-3 col-sm-4">
+        <label id="filee">File Upload </label>
+            <input type="file" accept="image/*" (change)="onSelectFile($event)"  placeholder="aaa" >
+            <img [src]="imgURL" height="200" *ngIf="imgURL" >
+    </div > -->
+    <div class="form-group col-md-3 col-sm-4">
+      <label>imgage Url</label>
+      <input type="text" class="form-control" id="image" [(ngModel)]="ad.image" name="image">
+    </div>
+
+    <div class="form-group col-md-3 col-sm-4">
+      <button type="submit" class="btn btn-success" >update</button>
+    </div >
+   
+
+ 
+    
+    </form> 
+    
+    </div> 

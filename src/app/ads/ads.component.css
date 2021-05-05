@@ -1,0 +1,143 @@
+.img-responsive{
+    height: 200px;
+    width: 200px;
+ 
+    
+}
+
+.form-control{
+    align-items: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #d6d6d015;
+    padding: 10px;
+  }
+  .product tumbnail thumbnail-3{
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  .col-xs-2 col-md-3{
+    margin-top: 30px;
+    margin-left: 80px;
+  }
+  #zarga{
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+.grid-container > div {
+    background-color: rgba(252, 252, 252, 0.8);
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+  }
+  .intro-single {
+    padding: 2rem 0 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.titleinput{
+  margin-top: 30px;
+    margin-left: 50px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+    left: 30px;
+    width: 230px;
+}
+.titlelabel{
+  color: #201e1e;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 30px;
+    
+}
+.categoryinput{
+  margin-top: 30px;
+  margin-left: 15px;
+  line-height: 20px;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 160 px;
+  width: 230px;
+
+}
+.categorylabel{
+  color: #201e1e;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 30px;
+
+}
+.cityinput{
+  margin-top: 30px;
+  margin-left: 50px;
+  line-height: 20px;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 160 px;
+  width: 230px;
+
+}
+.citylabel{
+  color: #201e1e;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+
+.adsinput{
+  margin-top: 30px;
+  margin-left: 18px;
+  line-height: 20px;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 160 px;
+  width: 230px;
+
+}
+.typelabel{
+  color: #201e1e;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 30px;
+
+}
+#aba{
+  margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px; 
+    font-size: 15px;
+}
+#le{
+  margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px; 
+    font-size: 15px;
+    width: 140px ;
+    line-height: 20px;
+  border-radius: 6px;
+  padding: 0 10px;
+  background-color:rgb(131, 47, 47);
+  
+}
+body{
+  
+
+  
+    background-image: url(https://greychapellegal.com/wp-content/uploads/2015/11/5657397_6094735Chapwood-website-background-1.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 40px;
+}

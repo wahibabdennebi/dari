@@ -1,0 +1,50 @@
+<p>estimation works!</p>
+<section class="intro-single"></section>
+<div class="container">
+    <form   class ="form-check form-check-inline grid-container" (ngSubmit)="onsubmitt()">
+      <div class="form-group ">
+       
+        <input type="number" class="form-control  col-xs-6 col-md-9" id="recherchetitle" [(ngModel)]="room" name="room">
+      </div>
+      <div class="form-group ">
+       
+        <input type="number" class="form-control  col-xs-6 col-md-9" id="recherchetitle" [(ngModel)]="area" name="area">
+      </div> 
+      
+      <div class="form-group ">
+        <select id="recherchecity" class="form-control  col-xs-6 col-md-9" [(ngModel)]="city" name="city">
+          <option selected>Bizerte</option>
+          <option >Beja</option>
+          <option >Jendouba</option>
+          <option >Kef</option>
+          <option >Zaghouan</option>
+          <option >Ariana</option>
+          <option >Ben_arous</option>
+          <option >Tunis</option>
+          <option >Mannouba</option>
+          <option >Nabeul</option>
+          <option >Sousse</option>
+          <option >Mounastir</option>
+          <option >Mahdia</option>
+          <option >Kasserine</option>
+          <option >Gafsa</option>
+          <option >Sfax</option>
+          <option >Gabes</option>
+          <option >Tataouin</option>
+          <option >Medennine</option>
+          <option >Touzuer</option>
+          <option >Kebeli</option>
+          <option >Sidi_bouzid</option>
+        </select>
+      </div>
+      <div class="form-group ">
+        <select id="recherchetype_ads" class="form-control  col-xs-6 col-md-9" [(ngModel)]="type_ads" name="type_ads">
+          <option selected>buy</option>
+          <option >rent</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success " >get </button> 
+    <div *ngIf="dhia" > <p > The estimate price is between :  {{resulat}} dn</p></div>
+    </form >
+    
+   </div>
