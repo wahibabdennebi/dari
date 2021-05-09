@@ -2,6 +2,8 @@ import { AdsServiceService } from './../ads-service.service';
 import { adsModel } from './adsModel';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import{MatDialog,MatDialogConfig} from '@angular/material/dialog';
+import { EstimationComponent } from '../estimation/estimation.component';
 
 @Component({
   selector: 'app-ads',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AdsComponent implements OnInit {
 adslist:adsModel[];
-  constructor(private adservice :AdsServiceService ,private router:Router) { }
+  constructor(private adservice :AdsServiceService ,private router:Router,private dialog: MatDialog) { }
 ad : adsModel =new adsModel();
 a:any;
 retrievedImage: any;
@@ -22,6 +24,7 @@ retrievedImage: any;
   category:any;
   city:any;
   type_ads:any;
+  test=false;
  
   cherche:adsModel[];
   recherche: adsModel =new adsModel();
@@ -94,6 +97,16 @@ getads(){
       
       // });  
       this.getads();
+    }
+
+    moredetails(){
+this.test=true;
+    }
+    oncreateestimation(){
+     let dialogRef= this.dialog.open(EstimationComponent);
+     dialogRef.afterClosed().subscribe(data=>{
+       
+     })
     }
 
 

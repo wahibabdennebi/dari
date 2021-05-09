@@ -2,3 +2,20 @@
     height: 200px;
     width: 200px;
 }
+.intro-single {
+    padding: 2rem 0 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 40px;
+    background-image: url(https://cdn.wallpapersafari.com/13/69/f5hRXp.gif);
+}

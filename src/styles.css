@@ -187,3 +187,6 @@ body{margin-top:20px;
     .quantity [class*='fa-']:hover {
       color: #455a64;
     }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

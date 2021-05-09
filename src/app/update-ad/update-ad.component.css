@@ -1,0 +1,242 @@
+#filee{
+    color: blue;
+}
+.intro-single {
+    padding: 2rem 0 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+  
+    background-image: url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80);
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    margin-top: 40px;
+}
+.regform{
+    width: 400px ;
+    background-color:rgb(39, 38, 38) ;
+    margin: auto;
+    color:#FFFFFF;
+    padding: 10px 0px 10px 0px ;
+    text-align:center ;
+    border-radius: 15px 15px 0px 0px;
+}
+h1{
+    color: silver;
+}
+.main{
+    width: 1000px ;
+    background-color:rgba(34, 34, 34, 0.5) ;
+    margin: auto;
+
+}
+.form{
+    padding: 10px;
+}
+#name{
+    width:100% ;
+    height:100px ;
+}
+
+.name{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 200px;
+    color: white;
+    font-size:  18px;
+    font-weight: 700;
+}
+
+.first{
+    position: relative;
+    left: 300px;
+    top: 1px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+}
+.second{
+    margin-top: 30px;
+    margin-left: 40px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+    
+}
+.third{
+    margin-top: 30px;
+    margin-left: 35px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+    
+}
+.forth{
+    margin-top: 30px;
+    margin-left: 20px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+
+}
+
+.a{
+    position: relative;
+    left: 250px;
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-left: 95px;
+  
+}
+.b{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 0px;
+
+}
+.dhiadhia{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 10px;
+
+}
+.labeldate{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.five{
+    margin-top: 30px;
+    margin-left: 80px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+
+}
+.six{
+    margin-top: 30px;
+    margin-left: 50px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+
+
+}
+.seven{
+    margin-top: 30px;
+    margin-left: 60px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+
+}
+.arealabel{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 0px;
+
+}
+.pricelabel
+{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 15px;
+}
+.roomlabel{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 16px;
+}
+.typelabel{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 1px;
+
+}
+
+.categorylabel{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 12px;
+
+}
+.citylabel{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 10px;
+
+}
+.optionad{
+    margin-top: 30px;
+    margin-left: 32px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 160 px;
+    width: 230px;
+}
+.optioncat{
+    margin-top: 30px;
+    margin-left: 18px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 160 px;
+    width: 230px;
+
+}
+.optioncity{
+    margin-top: 30px;
+    margin-left: 62px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 160 px;
+    width: 230px;
+
+}
+.imageurl{
+    margin-top: 30px;
+    margin-left: 55px;
+    line-height: 20px;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 16 px;
+
+}
+
+.imagelabel{
+    color: #e5e5e5;;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-left: 300px;
+
+}
+#bb{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 500px; 
+    font-size: 15px;
+}

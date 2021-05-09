@@ -1,18 +1,32 @@
-<p>estimation works!</p>
-<section class="intro-single"></section>
-<div class="container">
-    <form   class ="form-check form-check-inline grid-container" (ngSubmit)="onsubmitt()">
-      <div class="form-group ">
-       
-        <input type="number" class="form-control  col-xs-6 col-md-9" id="recherchetitle" [(ngModel)]="room" name="room">
-      </div>
-      <div class="form-group ">
-       
-        <input type="number" class="form-control  col-xs-6 col-md-9" id="recherchetitle" [(ngModel)]="area" name="area">
-      </div> 
+
+<!-- <section class="intro-single">
+  <head>
+    <title></title>
+  </head>
+  
+<body>
+<h1 mat-dialog-title>Estimation!</h1>
+<mat-dialog-content>
+<mat-dialog-actions>
+ <button mat-button mat-dialog-close mat-dialog-close="false">log out</button> -->
+
+
+
+
+<!-- <div class="container"> -->
+    <!-- <form   class ="form-check form-check-inline grid-container" (ngSubmit)="onsubmitt()"> -->
+      <!-- <div class="form-group "> -->
+       <!-- <label id="labelroom">room</label>
+        <input type="number" class="form-control  col-xs-6 col-md-9" id="roominput" [(ngModel)]="room" name="room"> -->
+      <!-- </div> -->
+      <!-- <div class="form-group "> -->
+       <!-- <label id="labelarea">area</label>
+        <input type="number" class="form-control  col-xs-6 col-md-9" id="areainput" [(ngModel)]="area" name="area"> -->
+      <!-- </div>  -->
       
-      <div class="form-group ">
-        <select id="recherchecity" class="form-control  col-xs-6 col-md-9" [(ngModel)]="city" name="city">
+      <!-- <div class="form-group "> -->
+        <!-- <label id="labelcity">city</label>
+        <select id="cityinput" class="form-control  col-xs-6 col-md-9" [(ngModel)]="city" name="city">
           <option selected>Bizerte</option>
           <option >Beja</option>
           <option >Jendouba</option>
@@ -35,16 +49,91 @@
           <option >Touzuer</option>
           <option >Kebeli</option>
           <option >Sidi_bouzid</option>
-        </select>
-      </div>
-      <div class="form-group ">
-        <select id="recherchetype_ads" class="form-control  col-xs-6 col-md-9" [(ngModel)]="type_ads" name="type_ads">
+        </select> -->
+      <!-- </div> -->
+      <!-- <div class="form-group "> -->
+        <!-- <label id="labeltype">type</label>
+        <select id="typeinput" class="form-control  col-xs-6 col-md-9" [(ngModel)]="type_ads" name="type_ads">
           <option selected>buy</option>
           <option >rent</option>
-        </select>
-    </div>
-    <button type="submit" class="btn btn-success " >get </button> 
+        </select> -->
+    <!-- </div> -->
+    <!-- <button type="submit" class="btn btn-success "  id="a">get </button> 
     <div *ngIf="dhia" > <p > The estimate price is between :  {{resulat}} dn</p></div>
     </form >
     
-   </div>
+   </div> -->
+  <!-- </mat-dialog-actions>
+  </mat-dialog-content>
+   </body>
+  </section> --> 
+
+
+ <section class="intro-single">
+  <head>
+    <title></title>
+  </head>
+<body>
+<h1 mat-dialog-title>Estimation!</h1>
+<mat-dialog-content>
+<mat-dialog-actions>
+  <form (ngSubmit)="onsubmitt()">
+    <div class="form-row" >
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Area:</label>
+        <input type="number" class="form-control " id="inputEmail4" [(ngModel)]="area" name="area" placeholder="Metre">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">room:</label>
+        <input type="number" class="form-control " id="inputPassword4" [(ngModel)]="room" name="room">
+      </div>
+    </div>
+    
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City:</label>
+        <select id="inputState" class="form-control" [(ngModel)]="city" name="city">
+          <option selected>Bizerte</option>
+          <option >Beja</option>
+          <option >Jendouba</option>
+          <option >Kef</option>
+          <option >Zaghouan</option>
+          <option >Ariana</option>
+          <option >Ben_arous</option>
+          <option >Tunis</option>
+          <option >Mannouba</option>
+          <option >Nabeul</option>
+          <option >Sousse</option>
+          <option >Mounastir</option>
+          <option >Mahdia</option>
+          <option >Kasserine</option>
+          <option >Gafsa</option>
+          <option >Sfax</option>
+          <option >Gabes</option>
+          <option >Tataouin</option>
+          <option >Medennine</option>
+          <option >Touzuer</option>
+          <option >Kebeli</option>
+          <option >Sidi_bouzid</option>
+        </select> 
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Type:</label>
+        <select id="inputState" class="form-control" [(ngModel)]="type_ads" name="type_ads">
+          <option selected>buy</option>
+          <option >rent</option>
+        </select> 
+      </div>
+      
+    </div>
+    
+    <button type="submit" class="btn btn-primary" id="bab" >Sign in</button>
+
+
+    <!-- <div *ngIf="dhia" > <p > The estimate price is between :  {{resulat}} dn</p></div> -->
+  </form>
+   </mat-dialog-actions>
+  </mat-dialog-content>
+   </body>
+  </section> 

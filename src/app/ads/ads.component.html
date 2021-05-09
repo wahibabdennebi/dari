@@ -76,62 +76,109 @@
     <title></title>
   </head>
   <body>
-  <div class="container">
-    <form  id="abc" class ="form-check form-check-inline grid-container" (ngSubmit)="onsubmitt()">
-      
-       <label class="titlelabel">title:</label>
-        <input type="text" class="titleinput" id="recherchetitle" [(ngModel)]="title" name="title">
-      
-     <label class="categorylabel">category:</label>
-        <select id="recherchecategory" class="categoryinput" [(ngModel)]="category" name="category">
-          <option selected>house</option>
-          <option >commerciel_permises</option>
-          <option >field</option>
-          <option >apartement</option>
-          <option >office</option>
-          <option >parking_space</option>
-          <option >others</option>
-        </select>
-      
-      <label class="citylabel">city:</label>
-        <select id="recherchecity" class="cityinput" [(ngModel)]="city" name="city">
-          <option selected>Bizerte</option>
-          <option >Beja</option>
-          <option >Jendouba</option>
-          <option >Kef</option>
-          <option >Zaghouan</option>
-          <option >Ariana</option>
-          <option >Ben_arous</option>
-          <option >Tunis</option>
-          <option >Mannouba</option>
-          <option >Nabeul</option>
-          <option >Sousse</option>
-          <option >Mounastir</option>
-          <option >Mahdia</option>
-          <option >Kasserine</option>
-          <option >Gafsa</option>
-          <option >Sfax</option>
-          <option >Gabes</option>
-          <option >Tataouin</option>
-          <option >Medennine</option>
-          <option >Touzuer</option>
-          <option >Kebeli</option>
-          <option >Sidi_bouzid</option>
-        </select>
-      
-      <label class="typelabel">type:</label>
-        <select id="recherchetype_ads" class="adsinput" [(ngModel)]="type_ads" name="type_ads">
-          <option selected>buy</option>
-          <option >rent</option>
-        </select>
-    
-    
-    
-    <button type="submit" class="btn btn-success " id="aba" >search</button> 
-    <button (click)="onretour()" id="le">return</button>
+    <mat-grid-list cols="2" rowHeight="200px"  >
+   
+  <mat-grid-tile>
+    <form  (ngSubmit)="onsubmitt()">
+     
+        
+
+
+      <div class="form-row" >
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">title:</label>
+          <input   type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="title" name="title">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="inputcategory">category:</label>
+          <select id="inputState" class="form-control" [(ngModel)]="category" name="category">
+            <option selected>house</option>
+            <option >commerciel_permises</option>
+            <option >field</option>
+            <option >apartement</option>
+            <option >office</option>
+            <option >parking_space</option>
+            <option >others</option>
+          </select>
+        </div>
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputcity">City:</label>
+            <select id="inputState" class="form-control" [(ngModel)]="city" name="city">
+              <option selected>Bizerte</option>
+              <option >Beja</option>
+              <option >Jendouba</option>
+              <option >Kef</option>
+              <option >Zaghouan</option>
+              <option >Ariana</option>
+              <option >Ben_arous</option>
+              <option >Tunis</option>
+              <option >Mannouba</option>
+              <option >Nabeul</option>
+              <option >Sousse</option>
+              <option >Mounastir</option>
+              <option >Mahdia</option>
+              <option >Kasserine</option>
+              <option >Gafsa</option>
+              <option >Sfax</option>
+              <option >Gabes</option>
+              <option >Tataouin</option>
+              <option >Medennine</option>
+              <option >Touzuer</option>
+              <option >Kebeli</option>
+              <option >Sidi_bouzid</option>
+            </select> 
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Type:</label>
+            <select id="inputState" class="form-control" [(ngModel)]="type_ads" name="type_ads">
+              <option selected>buy</option>
+              <option >rent</option>
+            </select> 
+          </div>
+        </div>
+    <button type="submit"  id="aba" ><mat-icon>search</mat-icon></button> 
     </form >
-    
+  </mat-grid-tile> 
+  <mat-grid-tile>
+    <div class="form-row">
+      <div class="col">
+        <button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="onretour()" id="le">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+      <div class="col">
+        <!-- <button (click)="onretour()" id="le">return</button> -->
+        
+        <button mat-raised-button (click)="oncreateestimation()" mat-fab color="warn" aria-label="Example icon button with a home icon" id="estimate"> 
+          <mat-icon>attach_money</mat-icon>Estimate
+        </button>
+
+      </div>
+
+
+
+      <div class="col">
+     
+        <button  id="pdf" mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon>print</mat-icon></button>
+        
+        
+      </div>
    </div>
+    </mat-grid-tile> 
+  </mat-grid-list>
+  
+
+  
+
+
+
+
+
+
+
+
   <!-- <div class="form-check form-check-inline col-xs-1 col-md-1">
     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
     <label class="form-check-label" for="inlineRadio1">buy</label>
@@ -142,11 +189,12 @@
   </div> --> 
  
 
- <div class="container bootstrap snipets">
+ <!-- <div class="container bootstrap snipets">
   <h1 class="text-center text-muted"></h1>
   <div class="row flow-offset-1">
-       
+ 
     <div class="col-xs-6 col-md-3" *ngFor="let a of adslist" id="zarga">
+    
       <div class="product tumbnail thumbnail-3">
        
              <img  class="img-responsive"   src="{{a.image}}">
@@ -189,7 +237,37 @@
     </div>
     
   </div>
-</div>
+</div> -->
+
+
+
+
+
+
+<mat-grid-list     cols="3" rowHeight="600px">
+  <mat-grid-tile *ngFor="let a of adslist">
+    <div>
+    <img  class="img-responsive"   src="{{a.image}}">
+      <p> city: {{a.city}} </p> 
+      <p> number of room : {{a.room}}</p>
+      <p> area : {{a.area}}</p>
+     <p> category : {{a.category}}</p>
+      <p> type : {{a.type_ads}}</p> 
+    <div *ngIf="test">
+      <p> des : {{a.description}}</p> 
+    </div>
+    <button (click)="updatead(a.id_ad)" type="button" class="btn btn-success" >update</button>
+    <button  type="button" class="btn btn-danger" style="margin-left: 10px;" (click)="delete(a.id_ad)" >delete</button>
+    <button (click)="ajouterfavoris(a.id_ad)" type="button" class="btn btn-info" style="margin-left: 10px" >favoris</button>
+      <button type="button" class="btn btn-info" style="margin-left: 10px" (click)="moredetails()">more info</button>
+  </div>
+
+
+  </mat-grid-tile>
+
+
+  
+</mat-grid-list>
 </body>
 </section>         
           

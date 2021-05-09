@@ -1,4 +1,4 @@
-<p>update</p>
+<!-- <p>update</p>
 <div class="col-md-8 offset-md-3">
     <h2>UPDATE</h2>
     <form (ngSubmit)="onsubmit()">
@@ -79,11 +79,7 @@
         </select>
       </div>
       
-       <!-- <div class="form-group col-md-3 col-sm-4">
-        <label id="filee">File Upload </label>
-            <input type="file" accept="image/*" (change)="onSelectFile($event)"  placeholder="aaa" >
-            <img [src]="imgURL" height="200" *ngIf="imgURL" >
-    </div > -->
+     
     <div class="form-group col-md-3 col-sm-4">
       <label>imgage Url</label>
       <input type="text" class="form-control" id="image" [(ngModel)]="ad.image" name="image">
@@ -99,4 +95,113 @@
     
     </form> 
     
-    </div> 
+    </div>  -->
+      <!-- <div class="form-group col-md-3 col-sm-4">
+        <label id="filee">File Upload </label>
+            <input type="file" accept="image/*" (change)="onSelectFile($event)"  placeholder="aaa" >
+            <img [src]="imgURL" height="200" *ngIf="imgURL" >
+    </div > -->
+    <section class="intro-single">
+      <head>
+        <title></title>
+      </head>
+      <body>
+        
+        <div class="regform"><h1> update ad</h1> </div>
+      <div class="main">
+          
+          <form (ngSubmit)="onsubmit()">
+            
+              <div id="name">
+                <h2 class="name"></h2>
+                <label class="a">title:</label>
+                <input type="text" class=" first" id="title" [(ngModel)]="ad.title" name="title"><br>
+                <label class="b">description:</label>
+                <input type="text" class="second" id="description" [(ngModel)]="ad.description" name="description">
+                <label class="dhiadhia">adress:</label>
+                <input type="text" class="third" id="adress" [(ngModel)]="ad.adress" name="adress">
+                <label class="labeldate" >creation date:</label>
+                <input type="datetime" class="forth" id="creationdate" [(ngModel)]="ad.creationdate" name="creationdate" placeholder="yyyy-mm-dd">
+              </div>
+              <div id="secondname">
+              <h2 class="name"></h2>
+              <label class="arealabel">area:</label>
+              <input type="number" class="five" id="area" [(ngModel)]="ad.area" name="area" >
+              <label class="pricelabel">Price:</label>
+              <input type="number" class="six" id="price" [(ngModel)]="ad.price" name="price">
+              <label class="roomlabel">room:</label>   
+              <input type="number" class="seven" id="room" [(ngModel)]="ad.room" name="room">  
+            </div> 
+            <div id="thirdname">
+               <h2 class="name"></h2>
+                
+                  <label  class="typelabel">Type of Ad:</label>
+                  <select id="type_ads" class="optionad" [(ngModel)]="ad.type_ads" name="type_ads" >
+                    <option  selected="selected">buy</option>
+                    <option >rent</option>
+                  </select>
+                  <label class="categorylabel" >Category:</label>
+              <select id="category" class="optioncat" [(ngModel)]="ad.category" name="category">
+                <option selected >house</option>
+                <option >commerciel_permises</option>
+                <option >field</option>
+                <option >apartement</option>
+                <option >office</option>
+                <option >parking_space</option>
+                <option >others</option>
+              </select>
+              <label class="citylabel">City:</label>
+              <select id="city" class="optioncity" [(ngModel)]="ad.city" name="city" >
+                <option selected>Bizerte</option>
+                <option >Beja</option>
+                <option >Jendouba</option>
+                <option >Kef</option>
+                <option >Zaghouan</option>
+                <option >Ariana</option>
+                <option >Ben_arous</option>
+                <option >Tunis</option>
+                <option >Mannouba</option>
+                <option >Nabeul</option>
+                <option >Sousse</option>
+                <option >Mounastir</option>
+                <option >Mahdia</option>
+                <option >Kasserine</option>
+                <option >Gafsa</option>
+                <option >Sfax</option>
+                <option >Gabes</option>
+                <option >Tataouin</option>
+                <option >Medennine</option>
+                <option >Touzuer</option>
+                <option >Kebeli</option>
+                <option >Sidi_bouzid</option>
+              </select>
+              
+            <div>
+            
+          </div> 
+          <div>
+        
+           
+           
+          </div>
+            
+            
+      
+          
+            <label class="imagelabel">imgage Url :</label>
+            <input type="text" class="imageurl" id="image" [(ngModel)]="ad.image" name="image">
+            
+            
+        </div>
+          <div class="form-group col-md-3 col-sm-4">
+            <button type="submit" class="btn btn-success" id="bb">update</button>
+          </div >
+         
+      
+       
+          
+          </form> 
+          
+          </div> 
+        </body>
+      </section>

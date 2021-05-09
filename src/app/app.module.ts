@@ -18,6 +18,12 @@ import { UpdateAdComponent } from './update-ad/update-ad.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { EstimationComponent } from './estimation/estimation.component';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,8 @@ import { EstimationComponent } from './estimation/estimation.component';
     PublishComponent,
     UpdateAdComponent,
     FavorisComponent,
-    EstimationComponent
+    EstimationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,10 +45,17 @@ import { EstimationComponent } from './estimation/estimation.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    MatGridListModule,
+    MatDialogModule,
+    MatIconModule,
+    BrowserAnimationsModule ,
+    MatButtonModule,
+    SweetAlert2Module.forRoot()
+  
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[EstimationComponent]
 })
 export class AppModule { }
