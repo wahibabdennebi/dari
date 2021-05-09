@@ -1,0 +1,121 @@
+
+<div class="container bootstrap snipets" >
+        <h1 class="text-center text-muted">youy product</h1>
+        <div class="row flow-offset-1">
+        <div class="col-xs-6 col-md-4" *ngFor="let f of ListFor">
+            <div class="product tumbnail thumbnail-3">
+            
+            <div class="caption" id="main-container">
+                <h6><a href="#">{{f.titre}}</a></h6><span class="price">
+                <del></del></span><span class="price sale">{{f.price}}</span>
+                <button  (click)="openModal(template,f)">delete</button>
+                <button  (click)="updateModal(templateupdate,f)">update</button>
+            </div>
+            </div>
+        </div>
+        </div>   
+ </div>
+
+ <!-- Delete Modal -->
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to delete employee  {{deleteForniture.titre}}?</p>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="deleteFor()">Yes</button>
+      </div>
+  </div>
+  </ng-template>
+ 
+<!-- update Modal -->
+  <ng-template #templateupdate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <form  #updateForm="ngForm" (ngSubmit)="updateFornutire(updateForm)" >
+              <div class="form-group">
+                <input type="hidden" ngModel="{{editForniture?.furniture_id}}" name="furniture_id" class="form-control" id="furniture_id" placeholder="furniture_id">
+                <label for="formGroupprice">price</label>
+                <input type="text" class="form-control" id="formGroupprice" placeholder="price" name="price" ngModel="{{editForniture?.price}}">
+              </div>
+              <div class="form-group">
+                <label for="formGroupdescription">description</label>
+                <input type="text" class="form-control" id="formGroupdescription" placeholder="description" name="description" ngModel="{{editForniture?.description}}">
+              </div>
+              <div class="form-group">
+                  <label for="formGrouptitre"> titre</label>
+                  <input type="text" class="form-control" id="formGrouptitre" placeholder="titre" name="titre"ngModel="{{editForniture?.titre}}">
+                </div>
+                <div class="form-group ">
+                  <label for="formGrouptype"> type</label>
+                  <select id="formGrouptype" class="form-control" placeholder="type" ngModel="{{editForniture?.type}}" name="type">
+                    <option selected>Meuble</option>
+                    <option >Accesoires</option>
+                    <option >All</option>
+                  </select>
+                </div>
+                <div class="form-group ">
+                  <label for="formGroupcity"> city</label>
+                  <select id="formGroupcity" class="form-control"  ngModel="{{editForniture?.city}}" name="city">
+                    <option selected>Bizerte</option>
+                    <option >Beja</option>
+                    <option >Jendouba</option>
+                    <option >Kef</option>
+                    <option >Zaghouan</option>
+                    <option >Ariana</option>
+                    <option >Ben_arous</option>
+                    <option >Tunis</option>
+                    <option >Mannouba</option>
+                    <option >Nabeul</option>
+                    <option >Sousse</option>
+                    <option >Mounastir</option>
+                    <option >Mahdia</option>
+                    <option >Kasserine</option>
+                    <option >Gafsa</option>
+                    <option >Sfax</option>
+                    <option >Gabes</option>
+                    <option >Tataouin</option>
+                    <option >Medennine</option>
+                    <option >Touzuer</option>
+                    <option >Kebeli</option>
+                    <option >Sidi_bouzid</option>
+                  </select>
+                </div>
+                <div class="container row">
+                  <div class="col-md-12">
+                      <h1>Upload Image</h1>
+                  </div>
+              </div>
+              <div class="container row">
+                  <div class="col-md-6">
+                      <input type="file" (change)="onFileChanged($event)">
+                  </div>
+                  <div class="col-md-6">
+                <!-----     <input type="button" (click)="onUpload()" value="upload"> ----->
+                  </div>
+              </div>
+                <button type="submit" class="btn btn-primary">update</button>
+            </form>
+        
+        
+          </div>
+
+
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="deleteFor()">Yes</button>
+      </div>
+  </div>
+  </ng-template>
+  

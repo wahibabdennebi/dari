@@ -1,0 +1,130 @@
+
+<section class="intro-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
+        <div class="title-single-box">
+          <form #searchForm="ngForm" (ngSubmit)="searchFornutire(searchForm)">
+              <div class="row">
+                    <div class="form-group col-md-3 col-sm-4">
+                      <label class="pb-2" for="Type">Keyword</label>
+                      <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword" name="titre"ngModel>
+                    </div>
+                   <div class="form-group col-md-3 col-sm-4">
+                      <label class="pb-2" for="Type">price</label>
+                      <input type="text" class="form-control form-control-lg form-control-a" placeholder="price" name="price" ngModel>
+                      <input hidden type="button" value="Click" id="coolbutton">
+                      
+                    </div>
+              </div>
+              <button type="submit" class="btn btn-primary" >search</button>
+         </form>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>
+          
+
+<section class="property-grid grid">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-4" *ngFor="let f of ListFornitures">
+              <div class="card-box-a card-shadow">
+                  <div class="img-box-a" *ngFor="let x of f.listImages index as i; first as isFirst">
+                    <img *ngIf="isFirst"  src="{{x.picByte}}" class="img-a img-fluid">
+                  </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                                <h2 class="card-title-a"><a (click)="openModal(template,f)">{{f.titre}}</a></h2>
+                            </div>
+                            <div class="card-body-a">
+                                  <div class="price-box d-flex"> <span class="price-a">{{f.price}}</span></div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                      <h4 class="card-info-title">description</h4>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+              </div>
+              <div><button (click)="addorder(f)">addorder</button></div>
+              <div *ngFor="let y of ListFornituresProm">
+                
+              </div>
+          </div>
+      </div>
+    </div>
+</section>
+
+<!-- Delete Modal -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="f-title block-descr">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-md-8 col-xs-12 col-sm-7">
+                    <h1> {{DetailsF.titre}}</h1>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-5 ">
+                    <p>{{DetailsF.price}}</p>
+                </div>
+            </div>
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let slide of DetailsF.listImages" class="slide">
+                  <img src="{{slide.picByte}}" alt="" width="100%">
+                </div>
+              </ngx-slick-carousel>
+        </div>
+    </div>
+          <div class="container  main-f">
+                <div class="row">
+                 <div>
+                          <div class ="ol-md-12 col-xs-12 col-sm-12 block-descr">
+                                <h3>Description</h3>
+                                <p >{{DetailsF.description}}</p>
+                          </div>
+                              <div >
+                                <h3>Property details</h3>
+                                    <div class="col-md-5 col-xs-12 col-sm-5">
+                                      <fa-icon [icon]="f"></fa-icon>
+                                      <span>city:</span>
+                                          <strong>{{DetailsF.city}}</strong>
+                                    </div>
+                                    <div class="col-md-5 col-xs-12 col-sm-5 block-over ">
+
+                                      <span>type</span>
+                                      <strong>{{DetailsF.type}}</strong>
+                                    </div>
+                             </div>
+                </div>
+          </div>
+        </div>   
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">close</button>
+        
+    </div>
+</div>
+</ng-template>
+
+
+
+
+
+    

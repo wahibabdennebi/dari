@@ -1,0 +1,80 @@
+
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Add furniture </h1>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <form  #addForm="ngForm" (ngSubmit)="addFornutire(addForm)">
+      <div class="form-group">
+        <label for="formGroupprice">price</label>
+        <input type="text" class="form-control" id="formGroupprice" placeholder="price" name="price" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="formGroupdescription">description</label>
+        <input type="text" class="form-control" id="formGroupdescription" placeholder="description" name="description" ngModel>
+      </div>
+      <div class="form-group">
+          <label for="formGrouptitre"> titre</label>
+          <input type="text" class="form-control" id="formGrouptitre" placeholder="titre" name="titre"ngModel>
+        </div>
+        <div class="form-group ">
+          <label for="formGrouptype"> type</label>
+          <select id="formGrouptype" class="form-control" placeholder="type" ngModel name="type">
+            <option selected>Meuble</option>
+            <option >Accesoires</option>
+            <option >All</option>
+          </select>
+        </div>
+        <div class="form-group ">
+          <label for="formGroupcity"> city</label>
+          <select id="formGroupcity" class="form-control"  ngModel name="city">
+            <option selected>Bizerte</option>
+            <option >Beja</option>
+            <option >Jendouba</option>
+            <option >Kef</option>
+            <option >Zaghouan</option>
+            <option >Ariana</option>
+            <option >Ben_arous</option>
+            <option >Tunis</option>
+            <option >Mannouba</option>
+            <option >Nabeul</option>
+            <option >Sousse</option>
+            <option >Mounastir</option>
+            <option >Mahdia</option>
+            <option >Kasserine</option>
+            <option >Gafsa</option>
+            <option >Sfax</option>
+            <option >Gabes</option>
+            <option >Tataouin</option>
+            <option >Medennine</option>
+            <option >Touzuer</option>
+            <option >Kebeli</option>
+            <option >Sidi_bouzid</option>
+          </select>
+        </div>
+        <div class="container row">
+          <div class="col-md-12">
+              <h1>Upload Image</h1>
+          </div>
+      </div>
+      <div class="container row">
+          <div class="col-md-6">
+              <input type="file" (change)="onFileChanged($event)">
+          </div>
+          <div class="col-md-6">
+        <!-----     <input type="button" (click)="onUpload()" value="upload"> ----->
+          </div>
+      </div>
+        <button type="submit" class="btn btn-primary">add</button>
+    </form>
+
+
+  </div>
