@@ -1,0 +1,50 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Update Bank: </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+    <form (ngSubmit) = "onSubmit()" >
+        <div  class="col-sm-3 col-md-2 col-lg-3">
+            <label >ID Bank</label>
+            <input  type="text" [(ngModel)]="b.id_bank" name="idBank" class="form-control">
+        </div>
+        <div class="col-sm-8 col-md-4 col-lg-8" >
+            <label >Nom de la Bank</label>
+            <input type="text" [(ngModel)]= "b.name" name="desc" class="form-control">
+        </div>  
+    
+       <div class="col-sm-3 col-md-4 col-lg-4">
+            <label >Taux d'interet</label>
+            <input type="text" [(ngModel)]= "b.taux_int" name="heure" class="form-control">
+       </div>
+       <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >TMM</label>
+        <input type="text" [(ngModel)]= "b.tmm" name="tmm" class="form-control"></div>
+
+        <div class="col-sm-8 col-md-4 col-lg-8">
+            <label >Date Taux d'interet</label>
+            <input type="date" 
+            [ngModel]= "b.date_tmm | date: 'yyyy-MM-dd'" 
+            (ngModelChange)=" b.date_tmm = $event" 
+            name="dateV" class="form-control">
+        </div>
+    <div class="col-sm-8 col-md-2 col-lg-8">
+        <label >Email</label>
+        <input type="text" [(ngModel)]= "b.mail" name="tmm" class="form-control">
+    </div>
+    <div>
+
+    <button  type="submit" class="btn btn-primary m-t-15 waves-effect" >Add</button></div>
+    </form>
+</div>
+</main>

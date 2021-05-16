@@ -1,0 +1,109 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">List Bank </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+<div class="body table-responsive">
+   <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+    <th>Nom de la Bank</th>
+    <th>Taux d'interet</th>
+    <th>TMM</th>
+    <th>Date du Taux d'interet</th>
+    <th>Email</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of listBank">
+        <td>{{b.id_bank}}</td>
+        <td>{{b.name}}</td>
+
+    <td>{{b.taux_int}}</td>
+    
+    <td>{{b.tmm}}</td>
+    <td>{{b.date_tmm}}</td>
+    <td>{{b.mail}}</td>
+
+    <td><button (click)="deleteBank(b.id_bank)" type="button" class="btn btn-primary">Delete</button></td>
+    <td>
+        <button type="submit" (click)="updateBank(b.id_bank)">Update</button>
+    
+    </td>
+    <td><button (click)="rappel(b,b.id_bank)" type="button" class="btn btn-primary">Rappel</button></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </main>
+
+   <!-- <div class="container">
+        <div>
+            <h2>Modifier Bank :</h2>
+        </div>
+        
+        <form >
+            <div  class="col-sm-3 col-md-2 col-lg-3">
+                <label >ID Bank</label>
+                <input  type="text" [(ngModel)]="Bkmod.id_bank" name="idBank" class="form-control">
+            </div>
+            <div class="col-sm-8 col-md-4 col-lg-8" >
+                <label >Nom de la Bank</label>
+                <input type="text" [(ngModel)]= "Bkmod.name" name="desc" class="form-control">
+         </div>  
+        
+        <div class="col-sm-3 col-md-4 col-lg-4">
+                <label >Taux d'interet</label>
+                <input type="text" [(ngModel)]= "Bkmod.taux_int" name="heure" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label >TMM</label>
+            <input type="text" [(ngModel)]= "Bkmod.tmm" name="tmm" class="form-control">
+    </div>
+            <div class="col-sm-8 col-md-4 col-lg-8">
+                <label >Date Taux d'interet</label>
+                <input type="date" 
+                [ngModel]= "Bkmod.date_tmm | date: 'yyyy-MM-dd'" 
+                (ngModelChange)=" Bkmod.date_tmm = $event" 
+                name="dateV" class="form-control">
+        </div>
+        <div class="col-sm-8 col-md-2 col-lg-8">
+            <label >Email</label>
+            <input type="text" [(ngModel)]= "Bkmod.mail" name="tmm" class="form-control">
+    </div>
+        
+        <div class="mt-2">
+            <button type="submit" (click)="updateBank()">Update</button>
+        
+        </div>
+        </form>
+        </div>
+    <td></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>-->
+
+<!--<ul>
+    <li *ngFor="let v of listVisit">
+        {{v.date_visit}}
+        {{v.date_visit}}
+        {{v.heure}}
+    </li>
+    <td>
+        <button (click)="deleteVisit(v.id)" type="button" class="btn btn-prima
+ry">DELETE</button>
+    </td>
+</ul>-->
+

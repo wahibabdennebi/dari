@@ -1,0 +1,54 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">List Borrower </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+<div class="body table-responsive">
+   <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+    <th>Salaire</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of listBorrower">
+        <td>{{b.id_borrower}}</td>
+
+    <td>{{b.salaire}}</td>
+    
+    
+    <td><button (click)="deleteBorrower(b.id_borrower)" type="button" class="btn btn-primary">Delete</button></td>
+    <td>
+        <button type="submit" (click)="updateBorrower(b.id_borrower)">Update</button>
+    
+    </td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+
+<!--<ul>
+    <li *ngFor="let v of listVisit">
+        {{v.date_visit}}
+        {{v.date_visit}}
+        {{v.heure}}
+    </li>
+    <td>
+        <button (click)="deleteVisit(v.id)" type="button" class="btn btn-prima
+ry">DELETE</button>
+    </td>
+</ul>-->
+
+

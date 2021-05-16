@@ -1,0 +1,44 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Update Visit: </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+    <form (ngSubmit) = "onSubmit()" >
+        <div  class="col-sm-3 col-md-2 col-lg-3">
+            <label >ID Visit</label>
+            <input  type="text" [(ngModel)]="v.id_visit" name="idv" class="form-control">
+        </div>
+        <div class="col-sm-8 col-md-4 col-lg-8">
+            <label >Date Visit</label>
+            <input type="date" 
+            [ngModel]= "v.date_visit | date: 'yyyy-MM-dd'" 
+            (ngModelChange)=" v.date_visit = $event" 
+            name="dateV" class="form-control">
+        </div>
+    
+       <div class="col-sm-3 col-md-4 col-lg-4">
+            <label >Description Feedback</label>
+            <input type="text" [(ngModel)]= "v.description_feedback" name="heure" class="form-control">
+       </div>
+       <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Heure</label>
+        <input type="text" [(ngModel)]= "v.heure" name="tmm" class="form-control"></div>
+
+        
+   
+    <div>
+
+    <button  type="submit" class="btn btn-primary m-t-15 waves-effect" >Add</button></div>
+    </form>
+</div>
+</main>

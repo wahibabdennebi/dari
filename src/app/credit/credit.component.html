@@ -1,0 +1,89 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-6">
+            <div class="title-single-box">
+              <h1 class="title-single">Credit </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+
+<div class="body table-responsive">
+    <form #f="ngForm">
+    <tr></tr>
+    <tr>
+        <div class="col-sm-8 col-md-8 col-lg-10" >
+           <label >Somme à emprunter</label>
+            <input type="text" [(ngModel)]= "emprunt" name="desc" class="form-control" required #desc="ngModel">
+     </div> 
+     <div *ngIf="desc.touched && desc.invalid">Veuillez entrer la somme à emprunter SVP </div><br> 
+    </tr>
+    <tr>
+        <div class="col-sm-10 col-md-10 col-lg-10" >
+        <label >Periode</label>
+            <input type="text" [(ngModel)]= "periode" name="pd" class="form-control" required #pd="ngModel">
+     </div>
+     <div *ngIf="pd.touched && pd.invalid">Veuillez entrer la periode SVP </div><br> 
+    </tr>
+    <tr>
+     <div class="container">
+        <div class="row">
+                   <div id="custom-search-input">
+                                    <div class="input-group col-md-12" style="text-align: center">
+                                        <label >ID Borrower  : </label>
+                                        <input type="text" class="search-query form-control" placeholder="Search With ID "  name="id" [(ngModel)]="id"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button" (click)="getById()">
+                                                <span class=" glyphicon glyphicon-search">chercher</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+        </div>
+    </div>
+    </tr>
+    
+   <table class="table table-bordered">
+    <thead>
+        
+       
+    <tr>
+        <th>ID</th>
+    <th>Bank</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        
+       
+
+    <tr *ngFor="let b of listBank">
+        <td>{{b.id_bank}}</td>
+
+        <td>{{b.name}}</td>
+    
+    
+    <td><button (click)="mensualite(b.id_bank,emprunt,periode)" type="button" class="btn btn-primary" [disabled]="f.invalid">Mensualite</button></td>
+    <td><button (click)="capacite(id,b.id_bank,periode)" type="button" class="btn btn-primary">Capacite</button></td>
+    
+
+    <td></td>
+    </tr>
+
+   
+
+    
+    
+    </tbody>
+    </table>
+</form>
+
+    </div>
+
+
+
+

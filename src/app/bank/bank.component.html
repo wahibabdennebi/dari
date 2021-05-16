@@ -1,0 +1,53 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Add Bank </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <form #addBk="ngForm" (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+          <label for="formGroupdescription">Nom de la Banque</label>
+          <input type="text" class="form-control" id="formGroupdescription" placeholder="nom" name="nom" [(ngModel)]="bank.name" required #nom="ngModel">
+        </div>
+        <div *ngIf="nom.touched && nom.invalid">Veuillez entrer le nom de la Banque SVP </div><br>
+        <div class="form-group">
+            <label for="formGroupHeure">Taux d'interet</label>
+            <input type="number" class="form-control" id="formGroupHeure" placeholder="Taux d'interet" name="heure" [(ngModel)]="bank.taux_int" required #taux="ngModel">
+          </div>
+          <div *ngIf="taux.touched && taux.invalid">Veuillez entrer le taux d'interet SVP </div><br>
+          <div class="form-group">
+            <label for="formGroupHeure">TMM</label>
+            <input type="number" class="form-control" id="formGroupHeure" placeholder="TMM " name="heure" [(ngModel)]="bank.tmm" required #tmm="ngModel">
+          </div>
+          <div *ngIf="tmm.touched && tmm.invalid">Veuillez entrer le TMM SVP </div><br>
+          <div class="form-group">
+            <label for="formGroupDateVisit">Date du Taux d'interet </label>
+            <input type="date" class="form-control" id="formGroupDateVisit"  name="date_visit" [(ngModel)]="bank.date_tmm" required #date_v="ngModel">
+          </div>
+          <div *ngIf="date_v.touched && date_v.invalid">Veuillez entrer la date du Taux d'interet SVP </div><br>
+          <div class="form-group">
+          <label for="formGroupdescription">Email de la Banque</label>
+          <input type="text" class="form-control" id="formGroupdescription" placeholder="email" name="mail" [(ngModel)]="bank.mail" required  pattern="[a-zA-Z0-9]+.[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]{2,3}" #e="ngModel"  >
+        </div>
+   
+    <div *ngIf="e.touched && e.invalid">
+        <div *ngIf="e.errors.required">Veuillez ecrire votre email SVP</div>
+        <div *ngIf="e.errors.pattern">Veuillez ecrire votre email correctement</div>
+
+    </div>
+          
+          <button  type="submit" class="btn btn-primary m-t-15 waves-effect" [disabled]="addBk.invalid">Add</button>
+      </form>
+  
+  
+    </div>
+  </main>
+

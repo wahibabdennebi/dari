@@ -1,0 +1,37 @@
+<main id="main">
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Add Visit </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <form #addV="ngForm" (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+          <label for="formGroupDateVisit">Date Visit</label>
+          <input type="date" class="form-control" id="formGroupDateVisit"  name="date_visit" [(ngModel)]="visit.date_visit" required #date_v="ngModel">
+        </div>
+        <div *ngIf="date_v.touched && date_v.invalid">Veuillez entrer la date de visit SVP </div><br>
+        <div class="form-group">
+          <label for="formGroupdescription">Description Feedback</label>
+          <input type="text" class="form-control" id="formGroupdescription" placeholder="description" name="description" [(ngModel)]="visit.description_feedback" required #desc="ngModel">
+        </div>
+        <div *ngIf="desc.touched && desc.invalid">Veuillez entrer la Description de Feedback SVP </div><br>
+        <div class="form-group">
+            <label for="formGroupHeure">Heure</label>
+            <input type="text" class="form-control" id="formGroupHeure" placeholder="Heure" name="heure" [(ngModel)]="visit.heure" required #heure="ngModel">
+          </div>
+          <div *ngIf="heure.touched && heure.invalid">Veuillez entrer l'heure de visit SVP </div><br>
+          
+          <button type="submit" class="btn btn-primary m-t-15 waves-effect" [disabled]="addV.invalid">Add</button>
+      </form>
+  
+  
+    </div>
+  </main>

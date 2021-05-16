@@ -1,0 +1,23 @@
+<div class="container">
+    <div>
+        <h2>Update Borrower :</h2>
+    </div>
+    
+    <form (ngSubmit) = "onSubmit()">
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+            <label >ID Borrower</label>
+            <input  type="text" [(ngModel)]="b.id_borrower" name="idSalaire" class="form-control">
+        </div>
+        
+    
+    <div class="col-sm-2 col-md-2 col-lg-2">
+            <label >Salaire</label>
+            <input type="text" [(ngModel)]= "b.salaire" name="salaire" class="form-control">
+    </div>
+    
+    <div class="mt-2">
+        <button  type="submit" class="btn btn-primary m-t-15 waves-effect" >Add</button>
+    
+    </div>
+    </form>
+    </div>

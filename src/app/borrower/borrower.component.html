@@ -1,0 +1,35 @@
+
+<main id="main">
+    
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Add Borrower </h1>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+    
+    <div class="container">
+      <form #addBr="ngForm" (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group">
+          <label for="formGroupdescription">Salaire</label>
+          <input type="number" class="form-control" id="formGroupdescription" placeholder="salaire" name="salaire" [(ngModel)]="borrower.salaire" required #salaire="ngModel">
+        </div>
+        <div *ngIf="salaire.touched && salaire.invalid">Veuillez entrer votre salaire SVP </div><br>
+        
+          
+          <button type="submit" class="btn btn-primary m-t-15 waves-effect" [disabled]="addBr.invalid">Add</button>
+      </form>
+  
+  
+    </div>
+
+  </main>
+
+
