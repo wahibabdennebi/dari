@@ -1,0 +1,9 @@
+.block-descr{
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.block-over {
+    padding: 10px;
+    margin: 5px;
+}

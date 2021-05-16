@@ -1,0 +1,112 @@
+
+<section class="intro-single">
+    <div class="container">
+      <div class="row">
+          <h1>panier</h1>
+           <div class="items" >
+                <div class="header">
+                    <div class="item">Article</div>
+                    <div class="quantity">Quantité</div>
+                    <div class="unit-price">Prix unitaire</div>
+                    <div class="subtotal">Sous-total </div>
+                </div>
+                <form  class="product" *ngFor="let x of listOrder">
+                    <div >    
+                        <div class="ln" >
+                                <div class="image ft-product-image">
+                                        <a href="">{{x.furniture.titre}}</a>
+                                </div>
+                                <div class="item">
+                                    <a href=""class="name">{{x.furniture.description}}</a>
+                                </div>
+                                <div class="quantity">
+                                    <label class="unit-quantity ft-product-quantity">1</label>
+                                </div>
+                                <div class="unit-price ft-product-unit-price">
+                                    <span  class="current"><span>{{x.furniture.price}}.00&nbsp;DT</span> </span> 
+                             <!--      <span  class="old -mtm"><span dir="ltr" data-price="210">210.00&nbsp;DT</span> </span>
+                                    <span  class="save">Economie : <span dir="ltr" data-price="60">60.00&nbsp;DT</span> </span>--> 
+                                </div>
+
+                                <div class="subtotal ft-product-subtotal-price">
+                                <a  (click)="sentOrder(x)" (click)="openModal(template)"><fa-icon [icon]="t"></fa-icon></a>  
+                                <div (click)="deleteOrder(x)"class="float-sm-right"> <a ><fa-icon [icon]="s"></fa-icon></a></div> 
+                                    
+                                </div>
+                        </div>
+                 </div>    
+               </form>
+           </div>
+           <div class="resume">
+                <div class="row total ft-total" >
+                    <label >Total :</label>
+                    <div class="ft-total-panel">
+                        <span dir="ltr" data-price="172">{{price}}.00&nbsp;DT</span> 
+                    </div>
+                </div>
+                
+
+           </div>
+      </div>
+    </div>
+    <div class="order-footer">
+        <div class="container">
+            <a href="" class="osh-btn -white-primary">
+                <span class="label ">Continue shopping</span>
+            </a>
+            <a [routerLink]="['/payment']" payment class="osh-btn -primary">
+                <span>Finalize your order</span>
+            </a>
+        </div>
+    </div>
+  </section>
+
+  <!-- choix method Modal -->
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to buy</p>
+      <form #methodForm="ngForm" (ngSubmit)="checkMethod(methodForm,template1)">
+                <div>
+                    <input type="checkbox" id="carte" name="carte" ngModel>
+                    <label for="scales">carte</label>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="point" name="point" ngModel>
+                    <label for="horns">loyalty point</label>
+                </div>
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+                <button class="btn btn-danger" data-dismiss="modal" type="submit" (click)="modalRef.hide()" >Yes</button>
+            </div>
+     </form>      
+  </div>
+  </ng-template>
+
+  <!-- confirmer Modal -->
+<ng-template #template1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>point</p>
+      <form #pointForm="ngForm" (ngSubmit)="checkMethod(pointForm,template1)">
+                <div>{{text}}</div>
+           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+                <button class="btn btn-danger" data-dismiss="modal" type="submit" (click)="buyWithLoyaltyPoint()">Yes</button>
+            </div>
+     </form>      
+  </div>
+  </ng-template>

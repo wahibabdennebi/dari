@@ -1,0 +1,115 @@
+
+  <section class="block-add-form">
+  <div class="container">
+    <div class=" simple-content-page ">
+      <div >
+          <form  #addForm="ngForm" (ngSubmit)="addFornutire(addForm)">
+              <div class="row">
+                  <label for="formGroupprice" class="col-md-3   col-sm-3  col-xs-12">price<span class="error">*</span></label>
+                  <div class="form-group col-md-6 col-sm-6  col-xs-12">
+                    <input type="text" class="form-control" id="formGroupprice" placeholder="price" name="price" ngModel>
+      
+                  </div>
+                <div class="col-md-3   col-sm-3 right-info">
+
+                </div>
+              </div> 
+              <div class="row">
+                <label for="formGroupdescription" class="col-md-3   col-sm-3  col-xs-12">description <span class="error">*</span> </label>
+                  <div class="form-group col-md-6 col-sm-6  col-xs-12">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control" id="formGroupdescription" placeholder="description" name="description" ngModel></textarea>
+                  </div>
+                  <div class="col-md-3   col-sm-3 right-info">
+                    <fa-icon [icon]="f" class="vert"></fa-icon>
+                    <span>
+                      Describe all the advantages of your property in a complete way
+                    </span>
+                  </div>
+               </div> 
+               <div class="row">  
+                    <label for="formGrouptitre"  class="col-md-3   col-sm-3  col-xs-12"> Title <span class="error">*</span></label>
+                    <div class="form-group col-md-6 col-sm-6  col-xs-12">   
+                        <input type="text" class="form-control" id="formGrouptitre" placeholder="Title" name="titre"ngModel>
+                      </div>
+                      <div class="col-md-3   col-sm-3 right-info">
+                        <fa-icon [icon]="f" class="vert"></fa-icon>
+                        <span>
+                          The Title does not exceed 100 characters.
+                        </span>
+                      </div>
+                 </div>  
+                 <div class="row">
+                  <label for="formGrouptype"  class="col-md-3   col-sm-3  col-xs-12"> type<span class="error">*</span></label>                  
+                      <div class="form-group col-md-6 col-sm-6  col-xs-12 ">
+                        <select id="formGrouptype" class="form-control" placeholder="type" ngModel name="type">
+                          <option selected>Meuble</option>
+                          <option >Accesoires</option>
+                          <option >All</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3   col-sm-3 right-info">
+                        <fa-icon [icon]="f" class="vert"></fa-icon>
+                        <span>
+                          Select the type of your furniture 
+                        </span>
+                      </div>
+                   </div>  
+                  <div class="row">  
+                    <label for="formGroupcity"class="col-md-3   col-sm-3  col-xs-12"> city<span class="error">*</span></label>
+                    <div class="form-group col-md-6 col-sm-6  col-xs-12 ">
+                      <select id="formGroupcity" class="form-control"  ngModel name="city">
+                        <option selected>Bizerte</option>
+                        <option >Beja</option>
+                        <option >Jendouba</option>
+                        <option >Kef</option>
+                        <option >Zaghouan</option>
+                        <option >Ariana</option>
+                        <option >Ben_arous</option>
+                        <option >Tunis</option>
+                        <option >Mannouba</option>
+                        <option >Nabeul</option>
+                        <option >Sousse</option>
+                        <option >Mounastir</option>
+                        <option >Mahdia</option>
+                        <option >Kasserine</option>
+                        <option >Gafsa</option>
+                        <option >Sfax</option>
+                        <option >Gabes</option>
+                        <option >Tataouin</option>
+                        <option >Medennine</option>
+                        <option >Touzuer</option>
+                        <option >Kebeli</option>
+                        <option >Sidi_bouzid</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3   col-sm-3 right-info">
+                      <fa-icon [icon]="f" class="vert"></fa-icon>
+                      <span>
+                        Choose the location of your property
+                      </span>
+                    </div>
+                  </div>
+              
+            <div class=" row">
+              <label for="formGroupcity"class="col-md-3   col-sm-3  col-xs-12"> photos<span class="error">*</span></label>
+                <div class="form-group col-md-6 col-sm-6  col-xs-12 ">
+                    <input type="file" accept="image/*" multiple (change)="onFileChanged($event)">
+                </div>
+                <div class="col-md-3   col-sm-3 right-info">
+                  <fa-icon [icon]="f" class="vert"></fa-icon>
+                  <span>
+                    select one or more photo of furniture
+                  </span>
+                </div>
+            </div>
+            <br>
+              <div class="row">
+                <button type="submit" class="btn btn-success ol-md-2 col-sm-2  col-xs-12  col-md-offset-8 col-sm-offset-8" >add</button>
+              </div>
+
+              
+          </form>
+        </div>    
+    </div>     
+ </div>
+</section>

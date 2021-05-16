@@ -1,0 +1,39 @@
+.simple-content-page {
+    padding: 20px 5px;
+    margin-bottom: 100px;
+    background-color: #fff;
+}
+
+.block-add-form {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.error {
+    color: red;
+}
+.right-info {
+    border-left: 2px solid #eee;
+    margin-top: 8px;
+}
+
+span{
+    font-size: 12px
+}
+.vert{
+    background: #1abc9c;
+    color: #fff;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    font-size: .8em;
+    line-height: 22px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgb(255 255 255 / 20%);
+    border-radius: 15px 15px 15px 0;
+}
+.col-sm-offset-8 {
+    margin-left: 66.66666667%;
+}
+.block-add-form{
+    padding-top: 80px;
+}

@@ -1,0 +1,114 @@
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Add promotion </h1>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    
+        <button (click)="openModal(template1)">add promotion</button>
+        <hr>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Type</span></th>
+                                <th><span>datedebut</span></th>
+                                <th class="text-center"><span>datefin</span></th>
+                                <th><span>value</span></th>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let list of listPromotions">
+                                    <td>
+                                        
+                                        <a href="#" class="user-link">{{list.type}}</a>
+                                        
+                                    </td>
+                                    <td>{{list.datedebut}}</td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{list.datefin}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{list.value}}</a>
+                                    </td>
+                                    <td style="width: 20%;">
+                                        
+                                        <a  class="table-link text-info" (click)="exuterPromotion(list.id)">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse" ></i>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="table-link danger">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+
+
+   <!-- add promotion Modal -->
+<ng-template #template1>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>point</p>
+      <form  #addPromotion="ngForm" (ngSubmit)="addPromtion(addPromotion)">
+        <div class="form-group">
+          <label for="formGroupdatedebut">date debut</label>
+          <input type="date" min="2021-05-04" max="2025-05-04" class="form-control" id="formGroupdatedebut" placeholder="datedebut" name="datedebut" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="formGroupdescription">date fin</label>
+          <input type="date" min="2021-05-04" max="2025-05-04" class="form-control" id="formGroupdatefin" placeholder="datefin" name="datefin" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="formGroupvalue"> value</label>
+            <input type="text" class="form-control" id="formGroupvalue" placeholder="value" name="value"ngModel>
+          </div>
+          <div class="form-group ">
+            <label for="formGrouptype"> type</label>
+            <select id="formGrouptype" class="form-control" placeholder="type" ngModel name="type">
+              <option selected>Meuble</option>
+              <option >Accesoires</option>
+              <option >All</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">add</button>
+            </div>
+      </form>
+  </div>
+  </ng-template>
