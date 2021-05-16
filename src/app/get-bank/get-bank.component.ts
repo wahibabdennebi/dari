@@ -30,7 +30,7 @@ export class GetBankComponent implements OnInit {
     /*this._service.updateBank(this.Bkmod).subscribe(() => {this._router.navigateByUrl("/listBank");alert("La modification s'est fait avec succés")});*/
   }
   rappel(b:Bank,id:number){
-    this._service.rappel(b,id).subscribe();
+    this._service.rappel(b,id).subscribe(() =>  {alert("le mail est envoyé avec succées")});
   }
  
 
