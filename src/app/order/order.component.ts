@@ -4,6 +4,7 @@ import { order } from '../order-module/order-module.module';
 import {Router} from '@angular/router'; 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgForm } from '@angular/forms';
+import { faCreditCard, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-order',
@@ -17,10 +18,16 @@ test:order;
 method:string="point";
 modalRef: BsModalRef;
 text:String=""
-
+t= faCreditCard;
+s= faTrashAlt;
   constructor( private service :FornitureService,private route:Router,private modalService: BsModalService) {}
 
   ngOnInit(): void {
+    this.get()
+    
+  }
+
+  get(){
     this.service.getorder().subscribe(
       (response:order[])=>{
         this.listOrder=response;
@@ -29,6 +36,13 @@ text:String=""
           
         
         }} 
+    )
+  }
+
+  deleteOrder(order:order){
+    this.service.deleteOrder(order).subscribe((dat:any)=>{
+       this.get();}
+     
     )
   }
 

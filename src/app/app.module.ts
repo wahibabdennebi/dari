@@ -19,6 +19,7 @@ import { OrderComponent } from './order/order.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PromotionComponent } from './promotion/promotion.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     FormsModule ,
     ModalModule.forRoot(),
     FontAwesomeModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

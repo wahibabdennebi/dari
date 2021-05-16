@@ -4,6 +4,7 @@ import { FornitureService } from '../forniture/forniture.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal'
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -20,28 +21,31 @@ export class FornitureCostumerComponent implements OnInit {
   constructor(private ps :FornitureService,private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.ps.getAllFornituresByCostumerId(1).subscribe(
-      (response:Forniture[])=>{
-       this.ListFor=response;
-       console.log(response);
-       for (let i of this.ListFor) { 
-        for(let x of i.listImages){
-         x.picByte='data:image/jpeg;base64,'+ x.picByte;
-        }}
-      })
+    this.get()
   }
+
+        get(){
+          this.ps.getAllFornituresByCostumerId(1).subscribe(
+            (response:Forniture[])=>{
+             this.ListFor=response;
+             console.log(response);
+             for (let i of this.ListFor) { 
+              for(let x of i.listImages){
+               x.picByte='data:image/jpeg;base64,'+ x.picByte;
+              }}
+            })
+        }
 
   updateFornutire(updateForm:NgForm):void {
     this.ps.updateFornitures(updateForm.value).subscribe(
       (resoonse:Forniture)=>{
         console.log(updateForm.value);
         this.ps.addImage(this.selectedFile,resoonse.furniture_id).subscribe()
-        console.log(resoonse)
-        alert("furniture update successfully")
-       
+        Swal.fire('success', 'furniture update successfully', 'success');
+       this.get()
       },
       (error:HttpErrorResponse)=>{
-        alert("not okay");
+        Swal.fire('Oops...', 'Something went wrong!', 'error');
       },
     );
     
@@ -63,9 +67,31 @@ export class FornitureCostumerComponent implements OnInit {
     this.deleteForniture=forniture;
     console.log(this.deleteForniture);
   }
+        test(forniture: Forniture){
+          this.deleteForniture=forniture;
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.deleteFor()
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+              this.get()
+            }
+          })
+        }
   deleteFor(){
     this.ps.deleteForniture(this.deleteForniture.furniture_id).subscribe(
-     this.modalRef.hide
+     
     )
   }
 }

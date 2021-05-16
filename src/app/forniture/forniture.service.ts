@@ -68,7 +68,10 @@ public confirmerToStripe(order:order):Observable<any>{
   return this.http.post<any>(url,order);
 }
 
-
+public deleteOrder(order:order):Observable<any>{
+  const url = 'http://localhost:8083/stripe/cancel'
+  return this.http.post<any>(url,order);
+}
 public buyWithLoyaltyPoint(costmers_id:number,furniture_id:number,method:string){
   const url='http://localhost:8083/furniture/costmers/'
   return this.http.get(`${url}${costmers_id}/${furniture_id}/${method}`,{responseType: 'text'} );

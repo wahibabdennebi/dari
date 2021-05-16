@@ -1,3 +1,4 @@
+
 <section class="intro-single">
     <div class="container">
       <div class="row">
@@ -13,7 +14,7 @@
                     <div >    
                         <div class="ln" >
                                 <div class="image ft-product-image">
-                                        <a href="">teteet</a>
+                                        <a href="">{{x.furniture.titre}}</a>
                                 </div>
                                 <div class="item">
                                     <a href=""class="name">{{x.furniture.description}}</a>
@@ -28,7 +29,9 @@
                                 </div>
 
                                 <div class="subtotal ft-product-subtotal-price">
-                                    <button (click)="sentOrder(x)" (click)="openModal(template)">buy</button>
+                                <a  (click)="sentOrder(x)" (click)="openModal(template)"><fa-icon [icon]="t"></fa-icon></a>  
+                                <div (click)="deleteOrder(x)"class="float-sm-right"> <a ><fa-icon [icon]="s"></fa-icon></a></div> 
+                                    
                                 </div>
                         </div>
                  </div>    

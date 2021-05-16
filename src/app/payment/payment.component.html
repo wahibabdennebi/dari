@@ -1,65 +1,43 @@
 
-
+ 
  <section class="intro-single">
     
   </section>
-
-
-<div class="container">
-    <div class="row">
-            <div class="2">
-                <div class="card">
-                    <div class="card-content">
-                        
-                            <div class="row ">
-                                <div class="col s6 text ">MONTANT TOTAL À PAYER</div>
-                                <div class="col s6 ">
-                                    <span class="price" >TND {{price}}.00</span>
-                                </div>
-                            </div>
-                        
-                    </div>
-                </div>
+    <div class="container">
+      <div class="col1">
+        <div class="card">
+          <div class="front">
+            <div class="type">
+              <img class="bankid"/>
             </div>
-        
-    </div>
-
-    <div class="titlepayment "> New payment method</div>
-        <div class="row">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-header-text">
-                            <div> Bank cards</div>
-                        </div>
-                        <div class="provider">
-                            <img class="provider-image " src="/src/assets/image/Visa-entry-left.png" >
-                            <img class="provider-image " src="/src/assets/image/Mastercard-entry-left.png" >
-                        </div>
-                    </div>
-                    <div>
-                        <form #addcarte="ngForm" (ngSubmit)="addCarteStripe(addcarte)">
-                            <div class="form-group">
-                                <label for="formGroupprice">Credit card number</label>
-                                <input type="text" class="form-control" id="formGroupprice" placeholder="card number" name="number" ngModel>
-                              </div>
-                              <div class="form-group">
-                                <label for="formGroupprice">Exp Month</label>
-                                <input type="text" class="form-control" id="formGroupprice" placeholder="Exp Month" name="exp_month" ngModel>
-                                <label for="formGroupprice">exp_year</label>
-                                <input type="text" class="form-control" id="formGroupprice" placeholder="exp_year" name="exp_year" ngModel>
-                                <label for="formGroupprice">CVV</label>
-                                <input type="text" class="form-control" id="formGroupprice" placeholder="CVV" name="cvc" ngModel>
-                              </div>
-                              <div> <button type="submit" (click)="updateModal(template)">Pay now:</button>
-                            </div>
-                              
-                        </form>
-                    </div>
-                </div>
-                
+            <span class="chip"></span>
+            <span class="card_number">&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; </span>
+            <div class="date"><span class="date_value">MM / YYYY</span></div>
+            <span class="fullname">FULL NAME</span>
+          </div>
+          <div class="back">
+            <div class="magnetic"></div>
+            <div class="bar"></div>
+            <span class="seccode">&#x25CF;&#x25CF;&#x25CF;</span>
+            <span class="chip"></span><span class="disclaimer">This card is property of Random Bank of Random corporation. <br> If found please return to Random Bank of Random corporation - 21968 Paris, Verdi Street, 34 </span>
+          </div>
         </div>
-
-</div>
+      </div>
+      <div class="col2">
+        <label>Cardholder name</label>
+        <input class="inputname" type="text" placeholder=""/>
+    <form #addcarte="ngForm" (ngSubmit)="addCarteStripe(addcarte)">
+        <label>Card Number</label>
+        <input class="number" type="text" ng-model name="number" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+        
+        <label>Expiry date</label>
+        <input class="expire" type="text"  ng-model name="exp_year" placeholder="MM / YYYY"/>
+        <label>Security Number</label>
+        <input class="ccv" type="text" placeholder="CVC" maxlength="3" name="cvc" ngModel onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+        <button class="buy" type="submit" (click)="updateModal(template)"><i class="material-icons">lock</i> Pay --.-- €</button>
+    </form>
+      </div>
+    </div>
 
 <!-- confirmer Modal -->
 <ng-template #template>
@@ -77,3 +55,5 @@
       </div>
   </div>
   </ng-template>
+
+  
