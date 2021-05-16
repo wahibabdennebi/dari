@@ -18,7 +18,8 @@ const routes: Routes = [
   {path:"Publish",component:PublishComponent},
   {path:"update/:id",component:UpdateAdComponent},
   {path:"favoris/:idd",component:FavorisComponent},
-  {path:"estimation",component:EstimationComponent}
+  {path:"estimation",component:EstimationComponent},
+  {path: '**', component: AdsComponent}
 ];
 
 @NgModule({

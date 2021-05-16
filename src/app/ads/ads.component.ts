@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import{MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import { EstimationComponent } from '../estimation/estimation.component';
+import {jsPDF} from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-ads',
@@ -18,14 +20,17 @@ a:any;
 retrievedImage: any;
           base64Data: any;
     retrieveResonse: any;
-   
+    i:number;
+    num:number;
   idad:number;
   title:string;
   category:any;
   city:any;
   type_ads:any;
   test=false;
- 
+  totalLength:any;
+  page:number=1;
+  show: boolean = false;
   cherche:adsModel[];
   recherche: adsModel =new adsModel();
 
@@ -59,7 +64,11 @@ retrievedImage: any;
 //     }
 getads(){
   this.adservice.getAdslist().subscribe((data:adsModel[])=>{
-    this.adslist=data; })
+    this.adslist=data; 
+  this.totalLength=data.length;
+  
+  
+  })
 }
     ajouterfavoris(idd:number){
       this.adservice.ajouterFavouris(idd,this.ad).subscribe(data=>{
@@ -99,8 +108,9 @@ getads(){
       this.getads();
     }
 
-    moredetails(){
-this.test=true;
+    moredetails(i){
+      this.show=true;
+this.num=i;
     }
     oncreateestimation(){
      let dialogRef= this.dialog.open(EstimationComponent);
@@ -108,6 +118,28 @@ this.test=true;
        
      })
     }
+
+
+
+    public openPDF():void {
+      var DATA = document.getElementById('genepdf');
+        
+      html2canvas(DATA).then(canvas => {
+          
+          var imgWidth = 309;
+          var pageHeight = 295;
+          var imgHeight =canvas.height * imgWidth /canvas.width;
+          var heightleft=imgHeight;
+          
+          var contentDataUrl = canvas.toDataURL("image/jpg")
+          let PDF = new jsPDF('p', 'mm', 'a4');
+          let position = 0;
+          PDF.addImage(contentDataUrl,'JPG' ,0, position,imgWidth, imgHeight)
+          
+          PDF.save('angular-demo.pdf');
+      });     
+    }
+
 
 
 

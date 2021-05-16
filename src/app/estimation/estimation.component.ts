@@ -30,7 +30,7 @@ export class EstimationComponent implements OnInit {
        console.log(this.resulat)
        
       Swal.fire({
-        title:"Hey sir thank you for trusting us your estimate number is beetwenn",
+        title:"Hey sir thank you for trusting us your estimate price  In Euros is between",
         text:this.resulat ,
         showCancelButton: true,
         icon:"success"

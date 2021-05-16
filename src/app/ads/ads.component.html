@@ -86,11 +86,11 @@
 
       <div class="form-row" >
         <div class="form-group col-md-6">
-          <label for="inputEmail4">title:</label>
+          <label for="inputEmail4">Title</label>
           <input   type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="title" name="title">
         </div>
         <div class="form-group col-md-6">
-          <label class="inputcategory">category:</label>
+          <label class="inputcategory">Category</label>
           <select id="inputState" class="form-control" [(ngModel)]="category" name="category">
             <option selected>house</option>
             <option >commerciel_permises</option>
@@ -104,7 +104,7 @@
       </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputcity">City:</label>
+            <label for="inputcity">City</label>
             <select id="inputState" class="form-control" [(ngModel)]="city" name="city">
               <option selected>Bizerte</option>
               <option >Beja</option>
@@ -131,7 +131,7 @@
             </select> 
           </div>
           <div class="form-group col-md-4">
-            <label for="inputState">Type:</label>
+            <label for="inputState">Type</label>
             <select id="inputState" class="form-control" [(ngModel)]="type_ads" name="type_ads">
               <option selected>buy</option>
               <option >rent</option>
@@ -161,7 +161,7 @@
 
       <div class="col">
      
-        <button  id="pdf" mat-fab color="warn" aria-label="Example icon button with a home icon"><mat-icon>print</mat-icon></button>
+        <button  id="pdf" mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="openPDF()"><mat-icon>print</mat-icon></button>
         
         
       </div>
@@ -244,8 +244,8 @@
 
 
 
-<mat-grid-list     cols="3" rowHeight="600px">
-  <mat-grid-tile *ngFor="let a of adslist">
+<mat-grid-list     cols="3" rowHeight="600px" id="genepdf">
+  <mat-grid-tile *ngFor="let a of adslist | paginate: { itemsPerPage: 2, currentPage: page,totalItems:totalLength };let i=index">
     <div>
     <img  class="img-responsive"   src="{{a.image}}">
       <p> city: {{a.city}} </p> 
@@ -253,21 +253,28 @@
       <p> area : {{a.area}}</p>
      <p> category : {{a.category}}</p>
       <p> type : {{a.type_ads}}</p> 
-    <div *ngIf="test">
-      <p> des : {{a.description}}</p> 
+      <p> price : {{a.price}}</p>
+    <div *ngIf="show && i==num">
+      <p> description : {{a.description}}</p> 
+      <p> creationdate : {{a.creationdate}}</p> 
+      <p> title : {{a.title}}</p>
     </div>
     <button (click)="updatead(a.id_ad)" type="button" class="btn btn-success" >update</button>
-    <button  type="button" class="btn btn-danger" style="margin-left: 10px;" (click)="delete(a.id_ad)" >delete</button>
-    <button (click)="ajouterfavoris(a.id_ad)" type="button" class="btn btn-info" style="margin-left: 10px" >favoris</button>
-      <button type="button" class="btn btn-info" style="margin-left: 10px" (click)="moredetails()">more info</button>
+    <button  type="button" class="btn btn-danger" style="margin-left: 10px;" (click)="delete(a.id_ad)" mat-fab color="warn" aria-label="Example icon button with a home icon" id="delet" ><mat-icon id="dadad">delete</mat-icon></button>
+    <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon" (click)="ajouterfavoris(a.id_ad)" style="margin-left: 10px">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <!-- <button (click)="ajouterfavoris(a.id_ad)" type="button" class="btn btn-info" style="margin-left: 10px" >favoris</button> -->
+      <button type="button"  style="margin-left: 10px" (click)="moredetails(i)" mat-fab color="primary"> <mat-icon>arrow_downward</mat-icon>info</button>
   </div>
 
-
+  
   </mat-grid-tile>
 
 
   
 </mat-grid-list>
+<pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
 </body>
 </section>         
           

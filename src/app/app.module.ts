@@ -24,6 +24,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import {NgxPaginationModule} from 'ngx-pagination'
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,9 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     MatIconModule,
     BrowserAnimationsModule ,
     MatButtonModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    NgxPaginationModule
+    
   
     
   ],
