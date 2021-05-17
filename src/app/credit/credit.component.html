@@ -52,8 +52,9 @@
         
        
     <tr>
-        <th>ID</th>
+        
     <th>Bank</th>
+    <th>Taux d'interet</th>
     <th></th>
     </tr>
     </thead>
@@ -62,9 +63,10 @@
        
 
     <tr *ngFor="let b of listBank">
-        <td>{{b.id_bank}}</td>
+        
 
         <td>{{b.name}}</td>
+        <td>{{b.taux_int}}</td>
     
     
     <td><button (click)="mensualite(b.id_bank,emprunt,periode)" type="button" class="btn btn-primary" [disabled]="f.invalid">Mensualite</button></td>
