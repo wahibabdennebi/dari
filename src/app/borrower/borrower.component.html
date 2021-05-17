@@ -1,6 +1,5 @@
 
 <main id="main">
-    
     <section class="intro-single">
       <div class="container">
         <div class="row">
@@ -15,7 +14,9 @@
     </section>
     
     <div class="container">
+       
       <form #addBr="ngForm" (ngSubmit) = "onSubmit()">
+        
         <div class="form-group">
           <label for="formGroupdescription">Salaire</label>
           <input type="number" class="form-control" id="formGroupdescription" placeholder="salaire" name="salaire" [(ngModel)]="borrower.salaire" required #salaire="ngModel">
