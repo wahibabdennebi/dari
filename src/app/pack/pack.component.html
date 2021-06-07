@@ -1,0 +1,197 @@
+
+
+
+
+<div class="col">
+<button class="container" (click)="open(mymodal)">
+
+  <img  src="https://www.cana-com.com/web/image/product.template/4/image?unique=6d2dd86"> 
+  <div class="overlay">
+    <div class="text">Bronze pack</div>
+  </div>
+</button>
+</div>
+ 
+<!--<button class="bronzeboutton"  (click)="open(mymodal)"  > 
+  <img  src="https://www.cana-com.com/web/image/product.template/4/image?unique=6d2dd86">BronzePack</button>-->
+
+
+
+   
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    
+    <p>Site Guide</p>
+<div class="containerr">
+  <div class="skills html">30%</div>
+</div>
+
+<p style="text-size-adjust: 30px;">Best ad</p>
+<div class="containerr">
+  <div class="skills css">20%</div>
+</div>
+
+<p>Best Furniture</p>
+<div class="containerr">
+  <div class="skills js">20%</div>
+</div>
+    
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" >
+      <span aria-hidden="true">×</span>
+    </button>
+    
+  </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <div class="modal-body">
+   
+    <form  #addForm="ngForm" (ngSubmit)="ajouterPack(addForm)">
+      <div class="form-group">
+        <label for="formGroupprice">date<span class="text-primary ml-1">*</span></label>
+        <input type="text" class="form-control" id="formGroupprice" placeholder="yyyy-mm-dd" name="date" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="formGroupdescription">price<span class="text-primary ml-1">*</span></label>
+        <input type="number" class="form-control" id="formGroupdescription" placeholder="price" name="price" ngModel>
+      </div>
+      <div class="form-group">
+          <label for="formGrouptitre"> type of the pack<span class="text-primary ml-1">*</span></label>
+          <input type="Type_pack" class="form-control" id="formGrouptitre" placeholder="BronzePack" name="TypePack"ngModel>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [routerLink]="['/getPack']">add</button>
+        
+        
+    </form>
+  
+
+  </div>
+ 
+</ng-template>
+
+<div class="col1">
+<button class="container " (click)="open(mymodal1)">
+  
+  <img  src="https://www.zimeletechnologies.com/images/silver.png"> 
+  <div class="overlay">
+    <div class="text">silverPack</div>
+  </div>
+</button>
+</div>
+   
+<ng-template #mymodal1 let-modal>
+  <div class="modal-header1">
+    <p>Site Guide</p>
+<div class="containerr">
+  <div class="skills html1">50%</div>
+</div>
+
+<p style="text-size-adjust: 30px;">Best ad</p>
+<div class="containerr">
+  <div class="skills css1">50%</div>
+</div>
+
+<p>Best Furniture</p>
+<div class="containerr">
+  <div class="skills js1">50%</div>
+</div>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="modal-body">
+    <div class="modal-body">
+      <form  #addForm="ngForm" (ngSubmit)="ajouterPack(addForm)">
+        <div class="form-group">
+          <label for="formGroupprice">date<span class="text-primary ml-1">*</span></label>
+          <input type="text" class="form-control" id="formGroupprice" placeholder="yyyy-mm-dd" name="date" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="formGroupdescription">price<span class="text-primary ml-1">*</span></label>
+          <input type="number" class="form-control" id="formGroupdescription" placeholder="price" name="price" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="formGrouptitre"> type of the pack<span class="text-primary ml-1">*</span></label>
+            <input type="Type_pack" class="form-control" id="formGrouptitre" placeholder="Silver" name="TypePack" ngModel>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" [routerLink]="['/getPack']">add</button>
+      </form>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')" >Ok</button>
+  </div>
+</ng-template>
+
+<div class="col2">
+<button class="container" (click)="open(mymodal2)">
+  <img  src="https://parkusonline.com/web/image/product.template/6/image?unique=2fe7e3a"> 
+  <div class="overlay">
+    <div class="text">Gold Pack</div>
+  </div>
+</button>
+</div>
+   
+<ng-template #mymodal2 let-modal>
+  <div class="modal-header2">
+    <p>Site Guide</p>
+    <div class="containerr">
+      <div class="skills html2">90%</div>
+    </div>
+    
+    <p>Best ad</p>
+    <div class="containerr">
+      <div class="skills css2">90%</div>
+    </div>
+    
+    <p>Best Furniture</p>
+    <div class="containerr">
+      <div class="skills js2">90%</div>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form  #addForm="ngForm" (ngSubmit)="ajouterPack(addForm)">
+      <div class="form-group">
+        <label for="formGroupprice">date<span class="text-primary ml-1">*</span></label>
+        <input type="text" class="form-control" id="formGroupprice" placeholder="yyyy-mm-dd" name="date" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="formGroupdescription">price<span class="text-primary ml-1">*</span></label>
+        <input type="number" class="form-control" id="formGroupdescription" placeholder="price" name="price" ngModel>
+      </div>
+      <div class="form-group">
+          <label for="formGrouptitre"> type of the pack<span class="text-primary ml-1">*</span></label>
+          <input type="Type_pack" class="form-control" id="formGrouptitre" placeholder="Gold" name="TypePack"ngModel>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [routerLink]="['/getPack']">add</button>
+        
+    </form>
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+

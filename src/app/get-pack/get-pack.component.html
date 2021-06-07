@@ -1,0 +1,81 @@
+<p>CC cv</p>
+
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div style="text-align: center;margin-top:  50px;">
+         <div class="col-3" style="display: inline-block;cursor: pointer;margin-left: 10px ;">
+            <button class="btn"  (click)="dosendsms(pack)"><i class="fa fa-sms"></i>rappelsms</button>
+            
+
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div style="text-align: center;margin-top:  50px;">
+         <div class="col-3" style="display: inline-block;cursor: pointer;margin-left: 10px ;">
+            
+            <!--<i class="fa fa-print" aria-hidden="true"><button type="submit " (click)="exportPdf()"> downloadNow</button></i>-->
+            <button class="btn" (click)="exportPdf()"><i class="fa fa-download" ></i> Download</button>  
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div style="text-align: center;margin-top:  50px;">
+         <div class="col-3" style="display: inline-block;cursor: pointer;margin-left: 10px ;">
+            <button class="btn" (click)="dorappel(pack)"><i class="fa fa-bell" ></i>rappel</button>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+           
+        <table class="table table-striped custab">
+        <thead>
+            <div class="container">
+                <div class="row">
+                           <div id="custom-search-input">
+                                            
+                                                <input type="number" class="search-query form-control" placeholder="Search With Email Address"  name="id" [(ngModel)]="id"/>
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-danger" type="button" (click)="getpack(id)">search
+                                                        <span class=" glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </span>
+                                            
+                                        </div>
+                </div>
+                </div>
+            <tr>    
+                <th>id</th>
+                <th>date</th>
+                <th>price</th>
+                <th>type_pack</th>
+         
+            </tr>
+        </thead>
+        <!--<tbody>
+            <tr >
+                <td>{{test.id_pack}}</td>
+                <td>{{test.date}}</td>
+                <td>{{test.price}}</td>
+                <td>{{test.type_pack}}</td>
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="dodelete(id)" ><span class="glyphicon glyphicon-remove"  ></span> Delete</button></td>
+              </tr>
+        </tbody>-->
+        </table>
+        </div>

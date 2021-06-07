@@ -1,0 +1,19 @@
+<p>livraison works!</p>
+<form  #addForm="ngForm" (ngSubmit)="ajouterlivreur(addForm)">
+    <div class="form-group">
+      <label for="formGroupprice">nom livreur<span class="text-primary ml-1">*</span></label>
+      <input type="text" class="form-control" id="formGroupprice" placeholder="Nom" name="Nom_livreur" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="formGroupdescription">city<span class="text-primary ml-1">*</span></label>
+      <input type="text" class="form-control" id="formGroupdescription" placeholder="city" name="city" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="formGrouptitre"> status<span class="text-primary ml-1">*</span></label>
+        <input type="Status" class="form-control" id="formGrouptitre" placeholder="status" name="status" ngModel>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [routerLink]="">add</button>
+  </form>
+
+
