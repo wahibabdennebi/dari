@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+  <section class="intro-single">
+    <div class="container">
+      <div class="title-single-box">
+        <h1 class="title-single">Edit User</h1>
+      </div>
+    </div>
+
+  </section>
+  <div class="container">
+
+  <div [hidden]="submitt" class="registration-form">
+  <form  #updateForm="ngForm" (ngSubmit)="onSubmit(updateForm)" class="modal-content" name="form">
+    <div class="form-icon">
+      <span><i class="fa fa-edit"></i></span>
+    </div>
+
+    <div class="container">
+    <div class="form-group">
+      <label for="name" style="padding-left:10px ">user name</label>
+      <input type="text" class="form-control" id="userName" required [(ngModel)]="user.userName" name="userName">
+      <input type="hidden" class="form-control" id="id_user" required [(ngModel)]="user.id_user" name="id_user">
+     </div>
+
+      <div class="form-group">
+      <label for="name" style="padding-left:10px ">Phone number</label>
+      <input type="text" class="form-control" id="phone_number" required [(ngModel)]="user.phone_number" name="phone_number">
+       </div>
+
+    <div class="form-group">
+      <label for="name" style="padding-left:10px ">Email </label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+
+    <button type="submit" class="btn btn-block create-account"><i class="fa fa-check"></i>EDIT</button>
+    </div>
+
+  </form>
+    </div>
+  </div>
+
+  <div [hidden]="!submitt">
+    <h4>You submitted successfully!</h4>
+  </div>
+</div>
+

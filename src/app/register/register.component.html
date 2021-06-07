@@ -1,0 +1,76 @@
+<div >
+<div class="panel panel-primary">
+  <section class="intro-single">
+    <div class="container">
+      <div class="title-single-box">
+        <h1 class="title-single">Register </h1>
+      </div>
+    </div>
+
+  </section>
+  <div class="registration-form">
+<form name="form" class="modal-content" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <div class="form-icon">
+    <span><i class="fa fa-user-plus"></i></span>
+
+  </div>
+  <div class="container">
+    <div class="form-group">
+      <label >enter your Email</label>
+      <input type="text" class="form-control" name="userName" [(ngModel)]="form.userName" #userName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && userName.invalid }" required />
+      <div *ngIf="f.submitted && userName.invalid" >
+        <div *ngIf="userName.errors.required">Adress mail is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label >enter your User name</label>
+      <input type="text" class="form-control" name="phone_number" [(ngModel)]="form.phone_number" #phone_number="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone_number.invalid }" required />
+      <div *ngIf="f.submitted && phone_number.invalid" >
+        <div *ngIf="phone_number.errors.required">User Name is required</div>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label >enter your phone number</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required />
+      <div *ngIf="f.submitted && email.invalid" >
+        <div *ngIf="email.errors.required">Phone number is required</div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+      <label >enter your password</label>
+      <input type="password" autocomplete="new-password" class="form-control" name="password" [(ngModel)]="form.password_client" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required />
+      <div *ngIf="f.submitted && password.invalid" >
+        <div *ngIf="password.errors.required">Password is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-block create-account"><i class="fa fa-user-o "></i>Register</button>
+      <div *ngIf="f.submitted && isSignUpFailed"> faileedd
+
+      </div>
+    </div>
+
+    <div class="row">
+      <p>Already have an account? <a href="login">Sign in</a></p>
+    </div>
+  </div>
+ </form>
+
+</div>
+
+</div>
+</div>
+
+
